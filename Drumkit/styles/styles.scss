@@ -1,0 +1,34 @@
+body,
+html {
+	background: url('/assets/images/art-blue-water-close-up-1251293.jpg') center /cover no-repeat;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.box {
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	margin: 5px 20px;
+	padding: 20px;
+	text-transform: uppercase;
+	transition: 0.5s;
+}
+.key-text {
+	color: white;
+	text-align: center;
+	font-size: 2rem;
+}
+.span-text {
+	color: orange;
+}
+.playing {
+	transform: scale(1.1);
+	border-color: #ffc600;
+	box-shadow: 0 0 10px #ffc600;
+}

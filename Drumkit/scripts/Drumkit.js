@@ -1,14 +1,21 @@
-const boxKey = document.querySelectorAll('.box');
+window.addEventListener('keydown', el => {
+	const keys = document.querySelectorAll('.btn-keys');
 
-window.addEventListener('keydown', key => {
-	// console.log(`key pressed: ${key.key}`, key);
-	const audio = document.querySelector(`audio[data-key="${key.keyCode}"]`);
+	const audio = document.querySelector(`audio[data-key="${el.keyCode}"]`);
+
 	if (!audio) return;
-	// console.log(audio);
-	const box = document.querySelector(`.box[data-key="${key.keyCode}"]`);
+
+	const addPlay = document.querySelector(`.btn-keys[data-key="${el.keyCode}"]`);
+
 	audio.currentTime = 0; //rewind
 	audio.play();
-	// console.log(box);
-	box.classList.add('playing');
-	box.classList.remove('playing');
+	addPlay.classList.add('playing');
+
+	function removeTransition(event) {
+		if (event.propertyName !== 'transform') return;
+
+		this.classList.remove('playing');
+	}
+
+	keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 });

@@ -1,34 +1,56 @@
 body,
 html {
-	background: url('/assets/images/art-blue-water-close-up-1251293.jpg') center /cover no-repeat;
+	background-color: #393e46;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	height: 100vh;
 }
-.container {
+.brand-container {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.box {
-	background-color: transparent;
-	display: flex;
-	flex-direction: column;
-	margin: 5px 20px;
-	padding: 20px;
-	text-transform: uppercase;
-	transition: 0.5s;
-}
-.key-text {
-	color: white;
 	text-align: center;
-	font-size: 2rem;
+	justify-content: center;
+	margin-bottom: 0.5rem;
 }
-.span-text {
-	color: orange;
-}
+
 .playing {
 	transform: scale(1.1);
 	border-color: #ffc600;
 	box-shadow: 0 0 10px #ffc600;
+}
+.btn-large {
+	border: 0;
+	width: 100%;
+}
+
+.keys-container {
+	display: grid;
+	justify-items: stretch;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 15px;
+	margin: 10px;
+
+	@media (min-width: 768px) {
+		grid-template-columns: repeat(9, 1fr);
+		gap: 9px;
+	}
+	@media (min-width: 1024) {
+		gap: 22px;
+	}
+}
+.btn-keys {
+	border: 0;
+	max-width: 90px;
+	padding: 0.9rem;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	transition: all 0.5s;
+
+	@media (min-width: 768px) {
+		max-width: 75px;
+	}
 }

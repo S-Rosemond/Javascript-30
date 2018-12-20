@@ -84,4 +84,16 @@ html {
     max-width: 75px;
   }
 }
+
+kbd {
+  font-size: 1.5rem;
+  color: white;
+  -webkit-text-stroke-color: #393e46;
+  -webkit-text-stroke-width: 1px;
+}
+
+span {
+  -webkit-text-stroke-width: 0.5px;
+  color: #02b7ffe5;
+}
 /*# sourceMappingURL=styles.css.map */

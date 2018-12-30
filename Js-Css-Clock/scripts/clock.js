@@ -11,19 +11,22 @@ const minCount = now => {
 	minHand.style.transform = `rotate(${minsDegrees}deg)`;
 };
 
-const hourCount = now => {
+const hourCount = () => {
+	let timeNow = new Date();
 	const hourHand = document.querySelector('.hour-hand');
-	const hour = now.getMinutes();
-	const hourDegrees = 360 * hour / 12 + 90;
+
+	const hour = timeNow.getHours();
+
+	const hourDegrees = hour + 90;
 	hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
-	console.log(hourDegrees);
+	console.log(hour);
 };
 
 const setDate = () => {
 	const now = new Date();
 	secondsCount(now);
 	minCount(now);
-	hourCount(now);
+	hourCount();
 };
 setInterval(setDate, 1000);
